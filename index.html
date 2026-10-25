@@ -1,95 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Wall Studio UK | Media Walls & Plastering</title>
-  <meta name="description" content="Custom media wall installations and expert plastering services in Rochdale & Greater Manchester.">
+  <title>Media Wall Studio UK | Bespoke Media Walls & Premium Finishes</title>
+  <meta name="description" content="Bespoke media wall installations, electric fireplaces, LED lighting, skimming, and Venetian plastering across Rochdale & Greater Manchester.">
   <style>
     :root {
       --bg: #0f172a;
       --card-bg: #1e293b;
-      --accent: #d97706;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
       --text: #f8fafc;
       --text-muted: #94a3b8;
+      --border: #334155;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; }
-    
-    /* Naprawiony Nagłówek */
+    body { 
+      background-color: var(--bg); 
+      color: var(--text); 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      line-height: 1.6; 
+      padding-bottom: 70px; 
+    }
+
+    /* Header */
     header {
       background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid #334155;
-      width: 100%;
     }
-    .logo { font-size: 1.25rem; font-weight: bold; color: var(--accent); }
-    
-    /* Hero Section */
-    .hero { text-align: center; padding: 3rem 1.5rem; }
-    .hero h1 { font-size: 2.25rem; margin-bottom: 1rem; color: #ffffff; }
-    .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    
-    /* Przyciski */
-    .btn {
-      background-color: var(--accent);
-      color: #ffffff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 0.5rem;
+    .logo-title { font-size: 1.2rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; }
+    .logo-title span { color: var(--accent); }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: #000000;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 0.9rem;
       display: inline-block;
-      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn:hover { background-color: #b45309; }
-    
-    /* Karty Usług */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3.5rem 1.5rem 2.5rem;
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    }
+    .tag {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem; font-weight: 800; }
+    .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 1.5rem; }
+
+    /* Calculator Widget */
+    .calc-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem auto;
+      max-width: 650px;
+      text-align: left;
+    }
+    .calc-box h3 { color: #fff; font-size: 1.2rem; margin-bottom: 1rem; text-align: center; }
+    .calc-group { margin-bottom: 1.2rem; }
+    .calc-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+    .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+    .opt-btn {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .opt-btn.active { border-color: var(--accent); background: rgba(245, 158, 11, 0.1); color: var(--accent); font-weight: bold; }
+    .price-output {
+      text-align: center;
+      background: #0f172a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      border: 1px dashed var(--border);
+    }
+    .price-output span { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+
+    /* Features Grid */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--card-bg); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #334155; }
-    .card h3 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.25rem; }
-    .card p { color: var(--text-muted); }
-    
-    /* Stopka */
-    footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-muted); border-top: 1px solid #334155; font-size: 0.9rem; }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">Media Wall Studio UK</div>
-    <a href="tel:TWOJ_NUMER_TELEFONU" class="btn">Get Quote</a>
-  </header>
-
-  <section class="hero">
-    <h1>Bespoke Media Walls & Plastering</h1>
-    <p>Professional installation, plastering, and dry-lining services across Rochdale & Greater Manchester.</p>
-    <a href="tel:07834833176" class="btn">Call Us Today</a>
-  </section>
-
-  <div class="container">
-    <div class="grid">
-      <div class="card">
-        <h3>Media Wall Installations</h3>
-        <p>Custom-built timber frame media walls with TV mounting, electric fireplaces, integrated LED lighting, and hidden wiring.</p>
-      </div>
-      <div class="card">
-        <h3>Plastering & Skimming</h3>
-        <p>Smooth, high-quality plastering finishes for walls and ceilings, moisture-resistant boards, and expert dry-lining.</p>
-      </div>
-      <div class="card">
-        <h3>Venetian & Decorative</h3>
-        <p>Premium Venetian plaster finishes creating stunning feature walls for modern interior living spaces.</p>
-      </div>
-    </div>
-  </div>
-
-  <footer id="contact">
-    <p>&copy; Media Wall Studio UK. Serving Rochdale & Greater Manchester.</p>
-  </footer>
-
-</body>
-</html>
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .card h3 { color: var(--accent); margin-bottom: 0.5rem; }
+    .card p { color: var(--text-muted
