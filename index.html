@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Wall Studio UK | Bespoke Media Walls & Premium Finishes</title>
-  <meta name="description" content="Bespoke media wall installations, electric fireplaces, LED lighting, skimming, and Venetian plastering across Rochdale & Greater Manchester.">
+  <title>Media Wall Studio UK | Bespoke Media Walls & Plastering</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -16,20 +15,16 @@
       --text-muted: #94a3b8;
       --border: #334155;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { 
-      background-color: var(--bg); 
-      color: var(--text); 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      line-height: 1.6; 
-      padding-bottom: 70px; 
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      padding-bottom: 80px;
     }
-
-    /* Header */
     header {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
+      background: #0f172a;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -39,83 +34,175 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo-title { font-size: 1.2rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; }
-    .logo-title span { color: var(--accent); }
-
-    /* Buttons */
+    .logo { font-size: 1.1rem; font-weight: 800; color: #ffffff; }
+    .logo span { color: var(--accent); }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      background: var(--accent);
       color: #000000;
       font-weight: 700;
-      padding: 0.65rem 1.25rem;
+      padding: 0.6rem 1.1rem;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: inline-block;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn-primary:active { transform: scale(0.98); }
-
-    /* Hero */
     .hero {
       text-align: center;
-      padding: 3.5rem 1.5rem 2.5rem;
-      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+      padding: 3rem 1.5rem 2rem;
     }
-    .tag {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--accent);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    .hero h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem; font-weight: 800; }
-    .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 1.5rem; }
-
-    /* Calculator Widget */
+    .hero h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; color: #ffffff; }
+    .hero p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; }
     .calc-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin: 1.5rem auto;
-      max-width: 650px;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1rem auto;
+      max-width: 500px;
       text-align: left;
     }
-    .calc-box h3 { color: #fff; font-size: 1.2rem; margin-bottom: 1rem; text-align: center; }
-    .calc-group { margin-bottom: 1.2rem; }
-    .calc-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem; }
-    .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+    .calc-box h3 { color: #fff; font-size: 1.1rem; margin-bottom: 1rem; text-align: center; }
+    .calc-group { margin-bottom: 1rem; }
+    .calc-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 6px; }
     .opt-btn {
       background: #0f172a;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 8px 12px;
+      padding: 8px;
       border-radius: 6px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       cursor: pointer;
       text-align: center;
     }
-    .opt-btn.active { border-color: var(--accent); background: rgba(245, 158, 11, 0.1); color: var(--accent); font-weight: bold; }
+    .opt-btn.active { border-color: var(--accent); color: var(--accent); font-weight: bold; }
     .price-output {
       text-align: center;
       background: #0f172a;
-      padding: 1rem;
+      padding: 0.8rem;
       border-radius: 8px;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       border: 1px dashed var(--border);
     }
-    .price-output span { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .price-output span { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .card h3 { color: var(--accent); margin-bottom: 0.4rem; }
+    .card p { color: var(--text-muted); font-size: 0.9rem; }
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f172a;
+      border-top: 1px solid var(--border);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+    footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
 
-    /* Features Grid */
-    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
-    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
-    .card h3 { color: var(--accent); margin-bottom: 0.5rem; }
-    .card p { color: var(--text-muted
+  <header>
+    <div class="logo">MEDIA WALL <span>STUDIO UK</span></div>
+    <a href="tel:07834833176" class="btn-primary">Call 07834 833176</a>
+  </header>
+
+  <section class="hero">
+    <h1>Bespoke Media Walls & Plastering</h1>
+    <p>Custom media wall installations, electric fireplaces, skimming & Venetian plaster across Rochdale & Greater Manchester.</p>
+    <a href="tel:07834833176" class="btn-primary" style="font-size: 1rem; padding: 0.8rem 1.5rem;">Free Site Survey</a>
+  </section>
+
+  <div class="container">
+    <div class="calc-box">
+      <h3>Instant Price Estimator</h3>
+      
+      <div class="calc-group">
+        <label>1. TV Size</label>
+        <div class="calc-options">
+          <div class="opt-btn active" onclick="setOpt('tv', 0, this)">Up to 55"</div>
+          <div class="opt-btn" onclick="setOpt('tv', 150, this)">65" - 75"</div>
+          <div class="opt-btn" onclick="setOpt('tv', 300, this)">85"+</div>
+        </div>
+      </div>
+
+      <div class="calc-group">
+        <label>2. Electric Fireplace</label>
+        <div class="calc-options">
+          <div class="opt-btn active" onclick="setOpt('fire', 0, this)">Client Supplies</div>
+          <div class="opt-btn" onclick="setOpt('fire', 600, this)">3-Sided Fire</div>
+        </div>
+      </div>
+
+      <div class="calc-group">
+        <label>3. Finish Type</label>
+        <div class="calc-options">
+          <div class="opt-btn active" onclick="setOpt('finish', 800, this)">Skimming</div>
+          <div class="opt-btn" onclick="setOpt('finish', 1300, this)">Venetian Plaster</div>
+        </div>
+      </div>
+
+      <div class="price-output">
+        <div style="font-size: 0.75rem; color: var(--text-muted);">ESTIMATED COST</div>
+        <span id="price-display">£800 - £1,100</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>Media Walls</h3>
+        <p>Stud frame construction, hidden cables, TV mounting & ambient LED lighting.</p>
+      </div>
+      <div class="card">
+        <h3>Plastering & Skimming</h3>
+        <p>Smooth skimming, dry lining, moisture-resistant boards & ceiling repairs.</p>
+      </div>
+      <div class="card">
+        <h3>Venetian Plastering</h3>
+        <p>Luxury Italian Venetian finishes for high-end feature walls.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-bar">
+    <div>
+      <div style="font-size: 0.7rem; color: var(--text-muted);">CALL DIRECT</div>
+      <div style="font-weight: 800; font-size: 0.9rem; color: #fff;">07834 833176</div>
+    </div>
+    <a href="tel:07834833176" class="btn-primary">Call Now</a>
+  </div>
+
+  <footer>
+    <p>&copy; Media Wall Studio UK. Rochdale & Greater Manchester.<br>Phone: 07834 833176</p>
+  </footer>
+
+  <script>
+    let tvCost = 0;
+    let fireCost = 0;
+    let finishCost = 800;
+
+    function setOpt(type, val, el) {
+      const parent = el.parentElement;
+      parent.querySelectorAll('.opt-btn').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+
+      if (type === 'tv') tvCost = val;
+      if (type === 'fire') fireCost = val;
+      if (type === 'finish') finishCost = val;
+
+      const totalBase = tvCost + fireCost + finishCost;
+      const totalMax = totalBase + 300;
+      document.getElementById('price-display').innerText = '£' + totalBase + ' - £' + totalMax;
+    }
+  </script>
+
+</body>
+</html>
