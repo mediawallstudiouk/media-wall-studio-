@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Wall Studio UK | Bespoke Media Walls & Plastering</title>
+  <title>Media Wall Studio UK | Showroom & Pricing</title>
+  <meta name="description" content="Bespoke media wall packages, fireplaces, and Venetian plaster finishes across Rochdale & Greater Manchester.">
   <style>
     :root {
       --bg: #0f172a;
@@ -15,16 +15,18 @@
       --text-muted: #94a3b8;
       --border: #334155;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.6;
       padding-bottom: 80px;
     }
+
     header {
-      background: #0f172a;
+      background: rgba(15, 23, 42, 0.95);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -36,60 +38,123 @@
     }
     .logo { font-size: 1.1rem; font-weight: 800; color: #ffffff; }
     .logo span { color: var(--accent); }
+
     .btn-primary {
       background: var(--accent);
       color: #000000;
       font-weight: 700;
-      padding: 0.6rem 1.1rem;
+      padding: 0.65rem 1.25rem;
       border-radius: 8px;
       text-decoration: none;
       font-size: 0.85rem;
       display: inline-block;
+      text-align: center;
     }
+
     .hero {
       text-align: center;
       padding: 3rem 1.5rem 2rem;
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
     }
-    .hero h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; color: #ffffff; }
-    .hero p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; }
-    .calc-box {
+    .hero h1 { font-size: 2.1rem; line-height: 1.2; margin-bottom: 0.75rem; color: #ffffff; }
+    .hero p { color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto 1.5rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center; color: #fff; }
+    .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    /* Showroom Grid */
+    .showroom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .showroom-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin: 1rem auto;
-      max-width: 500px;
-      text-align: left;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
-    .calc-box h3 { color: #fff; font-size: 1.1rem; margin-bottom: 1rem; text-align: center; }
-    .calc-group { margin-bottom: 1rem; }
-    .calc-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; }
-    .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 6px; }
-    .opt-btn {
+
+    .card-img-placeholder {
+      width: 100%;
+      height: 220px;
       background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .card-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .price-tag { font-size: 1.4rem; font-weight: 800; color: var(--accent); margin-bottom: 1rem; }
+    .price-tag span { font-size: 0.85rem; color: var(--text-muted); font-weight: normal; }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .feature-list li {
+      margin-bottom: 0.4rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .card-action { margin-top: auto; }
+
+    /* Contact & Booking Section */
+    .booking-box {
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      cursor: pointer;
+      border-radius: 14px;
+      padding: 2rem;
+      margin-top: 3rem;
       text-align: center;
     }
-    .opt-btn.active { border-color: var(--accent); color: var(--accent); font-weight: bold; }
-    .price-output {
-      text-align: center;
-      background: #0f172a;
-      padding: 0.8rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      border: 1px dashed var(--border);
-    }
-    .price-output span { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
-    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
-    .card h3 { color: var(--accent); margin-bottom: 0.4rem; }
-    .card p { color: var(--text-muted); font-size: 0.9rem; }
+    .booking-box h3 { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; }
+    .booking-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+    /* Sticky Mobile Call Bar */
     .mobile-bar {
       position: fixed;
       bottom: 0;
@@ -97,13 +162,14 @@
       right: 0;
       background: #0f172a;
       border-top: 1px solid var(--border);
-      padding: 10px 15px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 999;
     }
-    footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.8rem; }
+
+    footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
@@ -114,95 +180,105 @@
   </header>
 
   <section class="hero">
-    <h1>Bespoke Media Walls & Plastering</h1>
-    <p>Custom media wall installations, electric fireplaces, skimming & Venetian plaster across Rochdale & Greater Manchester.</p>
-    <a href="tel:07834833176" class="btn-primary" style="font-size: 1rem; padding: 0.8rem 1.5rem;">Free Site Survey</a>
+    <h1>Online Showroom & Packages</h1>
+    <p>Bespoke Media Walls built to perfection across Rochdale & Greater Manchester. Choose a design or create your own.</p>
   </section>
 
   <div class="container">
-    <div class="calc-box">
-      <h3>Instant Price Estimator</h3>
+    <h2 class="section-title">Popular Media Wall Packages</h2>
+    <p class="section-sub">All packages include timber framing, hidden cabling, TV mounting & smooth plaster finish.</p>
+
+    <div class="showroom-grid">
       
-      <div class="calc-group">
-        <label>1. TV Size</label>
-        <div class="calc-options">
-          <div class="opt-btn active" onclick="setOpt('tv', 0, this)">Up to 55"</div>
-          <div class="opt-btn" onclick="setOpt('tv', 150, this)">65" - 75"</div>
-          <div class="opt-btn" onclick="setOpt('tv', 300, this)">85"+</div>
+      <!-- Model 1 -->
+      <div class="showroom-card">
+        <div class="card-img-placeholder">
+          <!-- Jak będziesz miał zdjęcie, zamień ten div na: <img src="minimalist.jpg" alt="Minimalist Media Wall"> -->
+          <span>[ Photo: The Minimalist ]</span>
+          <div class="card-badge">Popular</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">The Minimalist</div>
+          <div class="price-tag">From £850 <span>+ materials</span></div>
+          <ul class="feature-list">
+            <li>Fits TVs up to 65"</li>
+            <li>Recessed soundbar / shelf slot</li>
+            <li>Custom timber stud frame</li>
+            <li>Hidden cable management</li>
+            <li>Full mirror-smooth plaster skim</li>
+          </ul>
+          <div class="card-action">
+            <a href="tel:07834833176" class="btn-primary" style="width: 100%;">Book Free Survey</a>
+          </div>
         </div>
       </div>
 
-      <div class="calc-group">
-        <label>2. Electric Fireplace</label>
-        <div class="calc-options">
-          <div class="opt-btn active" onclick="setOpt('fire', 0, this)">Client Supplies</div>
-          <div class="opt-btn" onclick="setOpt('fire', 600, this)">3-Sided Fire</div>
+      <!-- Model 2 -->
+      <div class="showroom-card">
+        <div class="card-img-placeholder">
+          <span>[ Photo: The Fireplace Feature ]</span>
+          <div class="card-badge">Best Seller</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">The Fireplace Feature</div>
+          <div class="price-tag">From £1,150 <span>+ fire choice</span></div>
+          <ul class="feature-list">
+            <li>Fits TVs up to 75"</li>
+            <li>3-Sided Electric Fireplace cutout</li>
+            <li>Ambient LED lighting channels</li>
+            <li>Bespoke timber framing & boarding</li>
+            <li>Full plaster skimming & prep</li>
+          </ul>
+          <div class="card-action">
+            <a href="tel:07834833176" class="btn-primary" style="width: 100%;">Book Free Survey</a>
+          </div>
         </div>
       </div>
 
-      <div class="calc-group">
-        <label>3. Finish Type</label>
-        <div class="calc-options">
-          <div class="opt-btn active" onclick="setOpt('finish', 800, this)">Skimming</div>
-          <div class="opt-btn" onclick="setOpt('finish', 1300, this)">Venetian Plaster</div>
+      <!-- Model 3 -->
+      <div class="showroom-card">
+        <div class="card-img-placeholder">
+          <span>[ Photo: The Venetian Luxe ]</span>
+          <div class="card-badge">Premium</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">The Venetian Luxe</div>
+          <div class="price-tag">From £1,550 <span>complete</span></div>
+          <ul class="feature-list">
+            <li>Fits any TV size (up to 85"+)</li>
+            <li>Italian Venetian Plaster Finish</li>
+            <li>Integrated smart LED lighting</li>
+            <li>Soundbar & fire recess options</li>
+            <li>Luxury marble/polished effect</li>
+          </ul>
+          <div class="card-action">
+            <a href="tel:07834833176" class="btn-primary" style="width: 100%;">Book Free Survey</a>
+          </div>
         </div>
       </div>
 
-      <div class="price-output">
-        <div style="font-size: 0.75rem; color: var(--text-muted);">ESTIMATED COST</div>
-        <span id="price-display">£800 - £1,100</span>
-      </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="grid">
-      <div class="card">
-        <h3>Media Walls</h3>
-        <p>Stud frame construction, hidden cables, TV mounting & ambient LED lighting.</p>
-      </div>
-      <div class="card">
-        <h3>Plastering & Skimming</h3>
-        <p>Smooth skimming, dry lining, moisture-resistant boards & ceiling repairs.</p>
-      </div>
-      <div class="card">
-        <h3>Venetian Plastering</h3>
-        <p>Luxury Italian Venetian finishes for high-end feature walls.</p>
-      </div>
+    <!-- Booking Box -->
+    <div class="booking-box">
+      <h3>Need a Custom Design or Exact Quote?</h3>
+      <p>We visit your home in Rochdale or Greater Manchester, measure up, and give you an exact fixed price quote for free.</p>
+      <a href="tel:07834833176" class="btn-primary" style="font-size: 1rem; padding: 0.8rem 1.8rem;">Call Kris: 07834 833176</a>
     </div>
+
   </div>
 
   <div class="mobile-bar">
     <div>
-      <div style="font-size: 0.7rem; color: var(--text-muted);">CALL DIRECT</div>
+      <div style="font-size: 0.7rem; color: var(--text-muted);">MEDIA WALL STUDIO UK</div>
       <div style="font-weight: 800; font-size: 0.9rem; color: #fff;">07834 833176</div>
     </div>
     <a href="tel:07834833176" class="btn-primary">Call Now</a>
   </div>
 
   <footer>
-    <p>&copy; Media Wall Studio UK. Rochdale & Greater Manchester.<br>Phone: 07834 833176</p>
+    <p>&copy; Media Wall Studio UK. Serving Rochdale, Bury, Oldham & Greater Manchester.<br>Direct Line: 07834 833176</p>
   </footer>
-
-  <script>
-    let tvCost = 0;
-    let fireCost = 0;
-    let finishCost = 800;
-
-    function setOpt(type, val, el) {
-      const parent = el.parentElement;
-      parent.querySelectorAll('.opt-btn').forEach(btn => btn.classList.remove('active'));
-      el.classList.add('active');
-
-      if (type === 'tv') tvCost = val;
-      if (type === 'fire') fireCost = val;
-      if (type === 'finish') finishCost = val;
-
-      const totalBase = tvCost + fireCost + finishCost;
-      const totalMax = totalBase + 300;
-      document.getElementById('price-display').innerText = '£' + totalBase + ' - £' + totalMax;
-    }
-  </script>
 
 </body>
 </html>
